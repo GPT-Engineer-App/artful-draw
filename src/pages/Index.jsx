@@ -20,6 +20,8 @@ const Index = () => {
     context.lineCap = "round";
     context.strokeStyle = color;
     context.lineWidth = brushSize;
+    context.fillStyle = "#000000"; // Set the background color to black
+    context.fillRect(0, 0, canvas.width, canvas.height); // Fill the canvas with black color
     setCtx(context);
   }, []);
 
@@ -50,7 +52,7 @@ const Index = () => {
   };
 
   return (
-    <Box position="relative" width="100vw" height="100vh">
+    <Box position="relative" width="100vw" height="100vh" bg="#000000">
       <canvas
         ref={canvasRef}
         onMouseDown={startDrawing}
